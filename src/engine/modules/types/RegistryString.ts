@@ -1,0 +1,1 @@
+export type RegistryString = "video" | "audio" | "component" | "model";

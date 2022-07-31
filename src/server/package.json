@@ -1,0 +1,20 @@
+{
+  "name": "cs1-game-server",
+  "version": "0.0.35",
+  "description": "Server designed to accompany the CS1 Game Engine for 3D multiplayer VR-ready progressive web applications.",
+  "keywords": ["cs1", "cs1 game engine", "A-Frame", "Three.js", "socket.io", "VR", "game", "multiplayer"],
+  "author": "SirFizX",
+  "homepage": "https://cs1.netlify.app/cs1-game-engine/",
+    "repository": {
+    "url": "https://github.com/EricEisaman/cs1-engine"
+  },
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "socket.io": "^2.2.0",
+    "uuid": "^3.3.2",
+    "lowdb": "^1.x",
+    "bufferutil": "^4.0.1",
+    "utf-8-validate": "^5.0.2"
+  }
+}

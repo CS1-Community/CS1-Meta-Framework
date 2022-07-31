@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <link rel="manifest" href="/manifest.json" />
+    <script src="cs1-engine.js"></script>
+    <script src="cs1-app.js" defer></script> 
+    <script>
+      // This is just to force HTTPS (can't do it statically on glitch)
+      if (location.protocol == "http:") location.protocol = "https:";
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw_cache_site.js")
+          .then(reg => console.log("Service Worker registered", reg))
+          .catch(err =>
+            console.error("Service Worker **not** registered", err)
+          );
+      } else {
+        console.warn("Service Worker not supported in this browser");
+      }
+    </script> 
+  </head>
+  <body>
+
+  </body>
+</html>
