@@ -1,0 +1,22 @@
+{
+  "name": "CS1",
+  "short_name": "CS1",
+  "description": "Introduction to Computer Science through Game Design and Development.",
+  "icons": [
+    {
+      "sizes": "192x192",
+      "type": "image/png",
+      "src": "https://cdn.glitch.me/51025b81-d25f-4a9a-8be3-85a4af63de51%2Fcs1_logo_192.png?v=1635687955723"
+    },
+    {
+      "sizes": "512x512",
+      "type": "image/png",
+      "src": "https://cdn.glitch.me/51025b81-d25f-4a9a-8be3-85a4af63de51%2Fcs1_logo_512.png?v=1635687994113"
+    }
+  ],
+  "display": "fullscreen",
+  "orientation":"landscape",
+  "background_color": "white",
+  "theme_color": "maroon",
+  "start_url": "/index.html"
+}
