@@ -48,6 +48,8 @@ export const Config = {
         renderer = window.THREE;
         //delete(window.THREE);
         console.log("Instantiating CS1 Cam, Rig, and Scene");
+        // Replace with instantiations of:
+        // AframeCam, AframeRig, and AframeScene
         Config.CS1.cam = new CS1Cam();
         Config.CS1.rig = new CS1Rig();
         Config.CS1.scene = new CS1Scene();
