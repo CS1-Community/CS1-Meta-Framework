@@ -1,0 +1,29 @@
+<link rel="manifest" href="../manifest.json" />
+<script src="../cs1-engine.js"></script>
+<script>
+  // This is just to force HTTPS (can't do it statically on glitch)
+  if (location.protocol == "http:") location.protocol = "https:";
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("../sw_cache_site.js")
+      .then((reg) => console.log("Service Worker registered", reg))
+      .catch((err) => console.error("Service Worker **not** registered", err));
+  } else {
+    console.warn("Service Worker not supported in this browser");
+  }
+</script>
+<script>
+  CS1.run(async () => {
+    box = await CS1.scene.add("a-box");
+    box?.setAttribute("color", "yellow");
+    box?.object3D.position.set(0, 1, -5);
+    cone = await CS1.scene.add("a-cone");
+    cone?.setAttribute("color", "red");
+    cone?.object3D.position.set(3, 1, -5);
+    cursor = document.createElement('a-cursor');
+    CS1.cam.entity.appendChild(cursor);
+    cone.addEventListener("click", e=>{
+      console.log("click");
+    });
+  });
+</script>
