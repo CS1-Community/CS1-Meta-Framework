@@ -50,6 +50,7 @@ import { Config } from "./modules/singletons/Config";
     console.log(`engine.ready state in CS1.run is ${ready}!`);
     if (ready) {
       console.log("Calling app main() from CS1!");
+      // Check if main is async, if not throw exception.
       main();
       delete CS1.config;
     } else {
