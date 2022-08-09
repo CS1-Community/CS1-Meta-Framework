@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 var fs = require('fs'),
     https = require('https'),
     express = require('express');
@@ -13,35 +15,38 @@ var app = express();
 
 var server = https.createServer(options, app).listen(port, function(){
   console.log("Express server listening on port " + port);
+  console.log(`https://localhost:${port}`);
 });
 
-app.get('/', function (req, res) {
-    res.writeHead(200);
-    res.end("hello world\n");
-});
+// app.get('/', function (req, res) {
+//     res.writeHead(200);
+//     res.end("hello world\n");
+// });
+
+
 //const express = require('express');  
 //const app = express();  
 //const http = require('http').Server(app); 
-//const io = require('socket.io')(http);
-// require('./socket/socket.js')(io);
-// require('./socket/addons/iot-api.js').setApp(app);
-// require('./admin/ide/ide-api.js').setApp(app);
-// app.use(express.static('public'));
-// if(process.env.PROD)
-// app.use(function(req, res, next) {
-//       if ((req.get('X-Forwarded-Proto') !== 'https')) {
-//         res.redirect('https://' + req.get('Host') + req.url);
-//       } else
-//         next();    
-//     });
-// app.get("/", function (request, response) {
-//   response.send('CS1 Game Server');
-//   //response.sendFile('./public/index.html',{root:'.'});
-// }); 
-// app.get("/admin", function (request, response) {
-//   response.send('Server Admin Console');
-//   //response.sendFile('admin.html',{root:'.'});
-// }); 
+const io = require('socket.io')(server);
+require('./socket/socket.js')(io);
+require('./socket/addons/iot-api.js').setApp(app);
+require('./admin/ide/ide-api.js').setApp(app);
+app.use(express.static('public'));
+if(process.env.PROD)
+app.use(function(req, res, next) {
+      if ((req.get('X-Forwarded-Proto') !== 'https')) {
+        res.redirect('https://' + req.get('Host') + req.url);
+      } else
+        next();    
+    });
+app.get("/", function (request, response) {
+  response.send('CS1 Game Server');
+  //response.sendFile('./public/index.html',{root:'.'});
+}); 
+app.get("/admin", function (request, response) {
+  response.send('Server Admin Console');
+  //response.sendFile('admin.html',{root:'.'});
+}); 
 // app.set('port', (process.env.PORT || 5000));
 
 // const default_config = {

@@ -18,7 +18,11 @@
     "mobx-state-tree": "^5.1.2",
     "mobx": "^6.5.0",
     "serve": "^14.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "socket.io": "^2.1.0",
+    "uuid": "^3.4.0",
+    "lowdb": "1.x",
+    "dotenv": "16.x"
   },
   "devDependencies": {
     "rollup-plugin-string": "^3.0.0",
