@@ -3,9 +3,9 @@ ___
 
 ## How is CS1 Engine a Meta-Framework?
 
-![backbone](./images/backbone.png)
+<img src="./images/backbone.png" height=256>
 
-### Each Vertebrae Represents an Archetectural Component
+### Each Vertebrae Represents an Architectural Component
 
 #### Examples:
 
