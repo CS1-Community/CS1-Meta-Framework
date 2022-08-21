@@ -14,12 +14,33 @@
 - Realtime Multiuser
 - Auth
 
-### Building the CS1 Engine
+### Building the CS1 Engine Locally
 
-From the terminal execute: `pnpm run engine`
+From the terminal execute: `npm run engine`
 
+### Building a CS1 App Locally
+
+From the terminal execute: `npm run app`
+
+### Building the CS1 Engine On Glitch
+
+From the terminal execute: `pnpm run engine-glitch`
+
+### Building a CS1 App On Glitch
+
+From the terminal execute: `pnpm run app-glitch`
+___
+
+## Run Your App Locally on Chrome
+
+**Enable this flag:**
+chrome://flags/#allow-insecure-localhost
+
+**Then go to:**
+https://localhost:8443
 
 ___
+
 
 ## Publishing to NPM
 
