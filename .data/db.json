@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": "f042967e-423a-420c-bf5e-40e35afb8aa3",
+      "name": "admin",
+      "pw": "999",
+      "isPlaying": false
+    }
+  ]
+}

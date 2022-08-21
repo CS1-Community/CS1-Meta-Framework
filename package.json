@@ -4,7 +4,7 @@
   "description": "CS1 Engine Community Edition.",
   "main": "server/main.js",
   "scripts": {
-    "start": "npx serve public/staging",
+    "start": "node src/server/main.js",
     "engine-glitch": "npx rollup -c --environment PROD:false,BUILD_TYPE:engine; refresh",
     "app-glitch": "npx rollup -c --environment PROD:false,BUILD_TYPE:app; refresh",
     "engine": "npx rollup -c --environment PROD:false,BUILD_TYPE:engine",
@@ -17,7 +17,12 @@
     "redux": "^4.1.2",
     "mobx-state-tree": "^5.1.2",
     "mobx": "^6.5.0",
-    "serve": "^14.0.1"
+    "serve": "^14.0.1",
+    "express": "^4.17.1",
+    "socket.io": "^2.1.0",
+    "uuid": "^3.4.0",
+    "lowdb": "1.x",
+    "dotenv": "16.x"
   },
   "devDependencies": {
     "rollup-plugin-string": "^3.0.0",
