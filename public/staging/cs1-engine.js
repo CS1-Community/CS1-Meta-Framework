@@ -12794,7 +12794,7 @@
         setActive;
         constructor() {
         }
-        setUp(cs1, resolve) {
+        setup(cs1, resolve) {
             console.log("Setting up cam.");
             this.entity = document.createElement("a-entity");
             this.entity.setAttribute("camera", "active:true");

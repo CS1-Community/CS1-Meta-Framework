@@ -1,7 +1,7 @@
 import { Camera } from "../interfaces/Camera";
 import { CameraString } from "../types/CameraString";
 import { Entity } from "../interfaces/Entity";
-import { EngineStateStore } from "./state/mst/EngineStateStore"
+import { EngineStateStore } from "./state/mst/EngineStateStore";
 
 export class AframeCam implements Camera {
   entity : any
@@ -13,7 +13,7 @@ export class AframeCam implements Camera {
     
   }
   
-  setUp(cs1:any, resolve:any):void {
+  setup(cs1:any, resolve:any):void {
     console.log("Setting up cam.");
     this.entity = document.createElement("a-entity");
     this.entity.setAttribute("camera", "active:true");
