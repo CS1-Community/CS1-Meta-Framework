@@ -37,6 +37,10 @@ ___
 
 chrome://flags/#allow-insecure-localhost
 
+**Then:**
+
+From the terminal execute: `npm run start`
+
 **Then go to:**
 https://localhost:8443
 

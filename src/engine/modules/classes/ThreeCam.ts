@@ -7,6 +7,7 @@ export class ThreeCam implements Camera {
   type: CameraString
   lookAt: (entity: Entity)=>{}
   setActive: ()=>{}
+  setUp: (cs1:any, resolve:any)=>void
   
   constructor(){
     

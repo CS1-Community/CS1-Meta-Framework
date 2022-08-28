@@ -12769,29 +12769,6 @@
       }
     }
 
-    class CS1Cam {
-      constructor() {
-        
-      }
-
-      
-      setup(cs1, resolve) {
-        console.log("Setting up cam.");
-        this.entity = document.createElement("a-entity");
-        this.entity.name = "CS1 Cam Entity";
-        this.entity.setAttribute("camera", "active:true");
-        this.entity.setAttribute("position", "0 1.65 0");
-        this.entity.setAttribute("look-controls", "pointerLockEnabled: true");
-        EngineStateStore.cam.setReady(cs1, resolve);
-        
-      }
-      
-      lookAt(pos) {
-        
-      }
-
-    }
-
     class CS1Rig {
       constructor() {
         
@@ -12808,6 +12785,23 @@
         this.entity.setAttribute("rig-wasd-controls", "");
         EngineStateStore.rig.setReady(cs1, resolve);
       }
+    }
+
+    class AframeCam {
+        entity;
+        type;
+        lookAt;
+        setActive;
+        constructor() {
+        }
+        setUp(cs1, resolve) {
+            console.log("Setting up cam.");
+            this.entity = document.createElement("a-entity");
+            this.entity.setAttribute("camera", "active:true");
+            this.entity.setAttribute("position", "0 1.65 0");
+            this.entity.setAttribute("look-controls", "pointerLockEnabled: true");
+            EngineStateStore.cam.setReady(cs1, resolve);
+        }
     }
 
     const registry = {
@@ -12853,7 +12847,9 @@
                         renderer = window.THREE;
                         //delete(window.THREE);
                         console.log("Instantiating CS1 Cam, Rig, and Scene");
-                        Config.CS1.cam = new CS1Cam();
+                        // Replace with instantiations of:
+                        // AframeCam, AframeRig, and AframeScene
+                        Config.CS1.cam = new AframeCam();
                         Config.CS1.rig = new CS1Rig();
                         Config.CS1.scene = new CS1Scene();
                 }
@@ -12902,6 +12898,7 @@
             console.log(`engine.ready state in CS1.run is ${ready}!`);
             if (ready) {
                 console.log("Calling app main() from CS1!");
+                // Check if main is async, if not throw exception.
                 main();
                 delete CS1.config;
             }
