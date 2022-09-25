@@ -9,8 +9,8 @@ export class AframeCam implements Camera {
   lookAt : (entity : Entity) => {}
   setActive : () => {}
   
-  constructor(){
-    
+  constructor(type: CameraString){
+    this.type = type;
   }
   
   setup(cs1:any, resolve:any):void {

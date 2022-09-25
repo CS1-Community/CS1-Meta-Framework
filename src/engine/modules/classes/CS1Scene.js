@@ -1,5 +1,5 @@
 import { StateManager } from "./state/redux/StateManager.js";
-import { EngineStateStore } from "./state/mst/EngineStateStore"
+import { EngineStateStore } from "./state/mst/EngineStateStore";
 //import { player } from "./components/player";
 //import { follow } from "./components/follow";
 export class CS1Scene {

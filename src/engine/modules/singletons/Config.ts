@@ -4,6 +4,8 @@ import { CS1Scene } from "../classes/CS1Scene.js";
 import { CS1Cam } from "../classes/CS1Cam.js";
 import { CS1Rig } from "../classes/CS1Rig.js";
 import { AframeCam } from "../classes/AframeCam";
+import { AframeRig } from "../classes/AframeRig";
+import { AframeScene } from "../classes/AframeScene";
 import { loadScript } from "../utils.js";
 import { registry } from "../registry.js";
 
@@ -51,9 +53,9 @@ export const Config = {
         console.log("Instantiating CS1 Cam, Rig, and Scene");
         // Replace with instantiations of:
         // AframeCam, AframeRig, and AframeScene
-        Config.CS1.cam = new AframeCam();
-        Config.CS1.rig = new CS1Rig();
-        Config.CS1.scene = new CS1Scene();
+        Config.CS1.cam = new AframeCam('player-cam');
+        Config.CS1.rig = new AframeRig('player-rig');
+        Config.CS1.scene = new AframeScene();
   
     }
     Config.CS1.ecs = ecs;
