@@ -12060,20 +12060,40 @@
                     console.log(typeof arg);
                     switch (typeof arg) {
                         case "string":
-                            const entity = document.createElement(arg);
-                            if (this.entity.hasLoaded) {
-                                this.entity.appendChild(entity);
-                                resolve(entity);
-                                return;
+                            if (arg.includes(".glb") || arg.includes(".gltf")) {
+                                const ent = document.createElement("a-gltf-model");
+                                ent.setAttribute("src", arg);
+                                if (this.entity.hasLoaded) {
+                                    this.entity.appendChild(ent);
+                                    resolve(ent);
+                                    return;
+                                }
+                                else {
+                                    this.entity.addEventListener("loaded", () => {
+                                        this.entity.hasLoaded = true;
+                                        console.log(`SCENE LOADED GLTF WITH URL ${arg}`);
+                                        this.entity.appendChild(ent);
+                                        resolve(ent);
+                                        return;
+                                    });
+                                }
                             }
                             else {
-                                this.entity.addEventListener("loaded", () => {
-                                    this.entity.hasLoaded = true;
-                                    console.log("SCENE LOADED STRING ARG");
-                                    this.entity.appendChild(entity);
-                                    resolve(entity);
+                                const ent = document.createElement(arg);
+                                if (this.entity.hasLoaded) {
+                                    this.entity.appendChild(ent);
+                                    resolve(ent);
                                     return;
-                                });
+                                }
+                                else {
+                                    this.entity.addEventListener("loaded", () => {
+                                        this.entity.hasLoaded = true;
+                                        console.log("SCENE LOADED STRING ARG");
+                                        this.entity.appendChild(ent);
+                                        resolve(ent);
+                                        return;
+                                    });
+                                }
                             }
                             break;
                         default:
@@ -12088,7 +12108,7 @@
                             else {
                                 this.entity.addEventListener("loaded", () => {
                                     this.entity.hasLoaded = true;
-                                    this.entity.appendChild(entity);
+                                    this.entity.appendChild(errorBox);
                                     reject(errorBox);
                                     return;
                                 });
