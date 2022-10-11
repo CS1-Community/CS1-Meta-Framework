@@ -1,0 +1,1 @@
+//Define TS helper interface here.
