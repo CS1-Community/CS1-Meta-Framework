@@ -1,3 +1,0 @@
-# MST Implementation
-
----

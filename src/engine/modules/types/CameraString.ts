@@ -1,1 +1,0 @@
-export type CameraString = "player-cam" | "effect-cam" | "minimap-cam" | "npc-cam";

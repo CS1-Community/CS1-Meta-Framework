@@ -1,1 +1,0 @@
-export type RigString = "player-rig" | "npc-rig" | "effect-rig";

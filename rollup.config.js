@@ -16,11 +16,11 @@ const version = process.env.VERSION;
 let i, s, o, n;
 
 switch (buildType) {
-  case "engine":
-    i = "src/engine/main.ts";
-    s = "src/engine/";
+  case "client":
+    i = "src/client/main.ts";
+    s = "src/client/";
     o = prod ? `dist/${process.env.VERSION}/` : `public/staging/`;
-    n = prod ? `cs1-engine.min.js` : `cs1-engine.js`;
+    n = prod ? `cs1-client.min.js` : `cs1-client.js`;
     break;
   case "app":
     i = "src/app/main.ts";
@@ -57,7 +57,9 @@ export default {
       filterRoot: s,
       target: "esnext",
     }),
-    nodeResolve(),
+    nodeResolve({
+      browser: true
+    }),
     commonjs(),
     ,
     replace({

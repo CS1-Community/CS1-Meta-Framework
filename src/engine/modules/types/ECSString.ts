@@ -1,1 +1,0 @@
-export type ECSString = "AFRAME" | "CS1";

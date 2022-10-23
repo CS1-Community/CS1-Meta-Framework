@@ -1,0 +1,1 @@
+export type Run = (main : Function) => void;
