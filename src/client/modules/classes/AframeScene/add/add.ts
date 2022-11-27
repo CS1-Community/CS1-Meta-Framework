@@ -1,4 +1,5 @@
 import { AframeScene } from "../AframeScene";
+import { handleObjectArg } from "./argTypes/object/handleObjectArg";
 
 export const add = async (arg: any, scene : AframeScene, resolve, reject) => {
     console.log("INSIDE SCENE ADD PROMISE ...");
@@ -46,13 +47,7 @@ export const add = async (arg: any, scene : AframeScene, resolve, reject) => {
         }
         break;
       case "object":
-        console.log("Object Argument Found.");
-        if(!arg.type) {
-          console.error("CS1.scene.add(arg), where arg is an object must contain a type property with a valid string value.");
-          reject();
-        }
-        console.log(`The requested object type is ${arg.type}.`)
-        resolve(true);
+        handleObjectArg(arg, resolve, reject);
         break;
       default:
         const errorBox = document.createElement("a-box");
