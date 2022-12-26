@@ -78,7 +78,7 @@ interface ISceneStateModelSnapshotIn
 interface ISceneStateModelSnapshotOut
   extends SnapshotOut<typeof SceneStateModel> {}
 
-const EngineStateModel = types
+export const EngineStateModel = types
   .model("EngineStateModel", {
     renderer: RendererStateModel,
     cam: CamStateModel,
