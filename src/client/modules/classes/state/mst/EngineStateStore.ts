@@ -9,6 +9,9 @@ import {
   getParent,
 } from "mobx-state-tree";
 
+import { ApplicationStateStore } from "./ApplicationStateStore";
+
+
 const RendererStateModel = types
   .model("RendererStateModel", {
     ready: false,
