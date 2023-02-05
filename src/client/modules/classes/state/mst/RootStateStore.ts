@@ -36,6 +36,6 @@ export const RootStateStore = RootStateModel.create();
 
 // Listen to new snapshots, which are created anytime something changes
 onSnapshot(RootStateStore, (snapshot) => {
-  console.log("SNAPSHOT");
+  console.log("RootStateStore SNAPSHOT");
   console.log(snapshot);
 });

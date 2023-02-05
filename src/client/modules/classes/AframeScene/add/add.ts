@@ -1,5 +1,6 @@
 import { AframeScene } from "../AframeScene";
 import { handleObjectArg } from "./argTypes/object/handleObjectArg";
+import { EntityPatch, patchedEntity } from "./patches/EntityPatch";
 
 export const add = async (arg: any, scene : AframeScene, resolve, reject) => {
     console.log("INSIDE SCENE ADD PROMISE ...");
@@ -16,6 +17,7 @@ export const add = async (arg: any, scene : AframeScene, resolve, reject) => {
         if(arg.includes(".glb") || arg.includes(".gltf")){
           const ent = document.createElement("a-gltf-model");
           ent.setAttribute("src", arg);
+
           if (scene.entity.hasLoaded) {
             scene.entity.appendChild(ent);
             resolve(ent);
@@ -30,7 +32,8 @@ export const add = async (arg: any, scene : AframeScene, resolve, reject) => {
             });
           }
         } else {
-          const ent = document.createElement(arg);
+          let ent = document.createElement(arg);
+          EntityPatch(ent);
           if (scene.entity.hasLoaded) {
             scene.entity.appendChild(ent);
             resolve(ent);
