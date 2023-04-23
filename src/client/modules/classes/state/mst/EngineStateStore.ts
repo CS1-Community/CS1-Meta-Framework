@@ -9,6 +9,9 @@ import {
   getParent,
 } from "mobx-state-tree";
 
+import { ApplicationStateStore } from "./ApplicationStateStore";
+
+
 const RendererStateModel = types
   .model("RendererStateModel", {
     ready: false,
@@ -78,7 +81,7 @@ interface ISceneStateModelSnapshotIn
 interface ISceneStateModelSnapshotOut
   extends SnapshotOut<typeof SceneStateModel> {}
 
-const EngineStateModel = types
+export const EngineStateModel = types
   .model("EngineStateModel", {
     renderer: RendererStateModel,
     cam: CamStateModel,
